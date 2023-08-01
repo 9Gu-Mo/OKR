@@ -1,0 +1,46 @@
+.blind{position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ clip: rect(1px, 1px, 1px, 1px);}
+.clearfix::after {content: "";display: block;clear: both;}
+.wrap {min-width: 1240px; position: relative; font-family: 'Noto Sans KR',sans-serif;}
+.wrap > * > strong {font-size: 30px; color: black; text-transform: uppercase; font-weight: bold;}
+
+.section {width: 100%; height: 2000px; background-color: darkcyan; display: flex; justify-content: center; align-items: center;}
+.footer {width: 100%; height: 200px; background-color: aquamarine; justify-content: center; align-items: center; display: flex; justify-content: center; align-items: center;}
+
+/* header */
+.header {width: 100%; background-color: #fff; position: absolute; top: 0; left: 0; transition: all 0.3s; box-sizing: border-box; z-index: 10; padding: 20px 0;}
+.header.on {background-color: #fff; border-bottom: 1px solid #e5e5e5;}
+.header.fixed {position: fixed;}
+.hWrap {align-items: center; justify-content: space-between; max-width: 1800px; margin: 0 auto; position: relative;}
+.hRight {display: flex; justify-content: space-between; margin-bottom: 20px;}
+.hLeft {display: flex; align-items: center;}
+.gnb > ul {display: flex; align-items: center;}
+.gnb > ul > li {padding: 0 20px;}
+.gnb > ul > li > a {color: #000; font-weight: bold; transition: all 0.3s; display: block; box-sizing: border-box;}
+.header.on .gnb > ul > li > a {color: #333; transition: all 0.3s; position: relative; overflow: hidden;}
+.header.on .gnb > ul > li > a::after {content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background-color: #333; opacity: 1; transition: opacity 0.5s, transform 0.5s; transform: translate3d(-100%, 0, 0);}
+.header.on .gnb > ul > li > a:hover::after {transform: translate3d(0, 0, 0);}
+.header.on .top_wh {display: none;}
+.header.on .top_bk {display: block;}
+.hRight > ul {display: flex; align-items: center;}
+.hRight > ul li a {margin-left: 30px; display: block; position: relative;}
+.hRight > ul li a .counter {font-size: 12px; color: #000; position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%); font-weight: bold;}
+.header.on .hRight > ul li a .counter {color: #000;}
+.hRight > ul li:first-child a {margin-left: 0;}
+/* .top_bk {display: none;} */
+.dim {display: none; position: fixed; top:0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .7); z-index: 5;}
+.dim.on {display: block;}
+.lnb {display: none; width: 100%; height: 360px; position: absolute; background-color: #fff;top: 99px; left: 0;}
+.lnb.on {display: block;}
+.lnb_inner {width: 1440px; margin: 0 auto; height: 100%; padding: 30px 0; box-sizing: border-box; display: flex;}
+.lnb_inner ul li a {display: block; font-size: 14px; color: #1a1a1a; height: 30px; line-height: 30px; font-weight: bold;}
+.lnb_inner .depth-1 {margin-right: 100px;}
+.lnb_inner .depth-2 {padding-left: 40px; border-left: 1px solid #e5e5e5;}
+.hMenu {display: block; width: 40px; height: 36px; position: relative; cursor: pointer; transform: scale(0.6);}
+.hMenu input {display: none;}
+.hMenu div {position: absolute; height: 4px; border-radius: 2px; background-color: #000; transition: transform 0.45s cubic-bezier(0.9, 0.6, 0.3, 1.6), width 0.2s ease 0.2s;}
+.hMenu input + div {top: 50%; left: 0; margin-top: -2px; width: 40px; transform-origin: 50% 50%;}
+.hMenu input:checked + div {transform: rotate(-45deg); transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s;}
+.hMenu input + div + div {top: 2px; left: 0; width: 20px; transform-origin: 0 50%;}
+.hMenu input:checked + div + div {width: 19px; transform: translate(6px, 0) rotate(45deg); transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s, width 0.2s ease;}
+.hMenu input + div + div + div {bottom: 2px; right: 0; width: 28px; transform-origin: 100% 50%; transform: translate(-12px, 0);}
+.hMenu input:checked + div + div + div {width: 19px; transform: translate(-6px, 0) rotate(45deg); transition: transform 0.45s cubic-bezier(0.9, -0.6, 0.3, 1.6) 0.1s, width 0.2s ease;}
