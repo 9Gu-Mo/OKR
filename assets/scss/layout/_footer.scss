@@ -1,0 +1,122 @@
+.footer {
+    width: 100%;
+    padding: 50px 10px;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+    margin: 50px auto 0;
+
+    .ft_inner {
+        max-width: 1580px;
+        margin: 0 auto;
+
+        .ft_top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .ft_left {
+                margin-bottom: 40px;
+                width: 54%;
+
+                p {
+                    color: #1a1a1a;
+                    font-size: 12px;
+
+                    &.phone {
+                        font-weight: 700;
+                        margin-bottom: 10px;
+                        font-size: 20px;
+                    }
+                }
+
+                .email {
+                    margin-bottom: 40px;
+
+                    p {
+                        color: #909090;
+                        font-size: 12px;
+                        margin-top: 12px;
+                    }
+                }
+
+                .bt_copyright {
+                    font-size: 12px;
+                    color: #909090;
+                    line-height: 25px;
+                    margin-bottom: 40px;
+                }
+
+                .sns_wrap {
+                    ul {
+                        font-size: 0;
+
+                        li {
+                            display: inline-block;
+                            margin-right: 15px;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ft_right {
+                font-size: 0;
+                width: 46%;
+                div {
+                    text-align: right;
+                    ul {
+                        display: inline-block;
+                        vertical-align: top;
+                        margin-left: 50px;
+                        text-align: left;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+    
+                        li {
+                            a {
+                                font-size: 12px;
+                                color: #606060;
+                                line-height: 30px;
+    
+                                &.ft_bd {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .familySite_wrap {
+                    margin-top: 30px;
+                    text-align: right;
+                    position: relative;
+
+                    .bt_familySite {
+                        font-size: 12px;
+                        display: inline-block;
+                        padding: 5px 20px;
+                        color: #1a1a1a;
+                        border-radius: 20px;
+                        border: 1px solid #1a1a1a;
+                        appearance: none;
+                        -webkit-appearance: none;
+                    }
+                }
+            }
+        }
+
+        .ft_bot {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 30px;
+
+            p {
+                font-size: 12px;
+                color: #909090;
+            }
+        }
+    }
+}
