@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     $(".btn_top").click(function(){
-        console.log("s")
         $('html, body').animate({
             scrollTop:0
         }, 400);
@@ -229,17 +228,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 컬러, 사이즈 라디오 박스 체크 판별
     let colChk = $('.color input');
-    let sizeChk = $('.size input');
+    let sizeChk = $('.size .opt_chk');
     colChk.on('click', function() {
-        if(colChk.is(':checked') == true) {
-            sizeChk.removeAttr('disabled');
-        } else {
-            // sizeChk.attr('disabled', true);
-            // sizeChk.removeAttr('checked');
-            console.log("동작 확인")
-        }
+        if(colChk.is(':checked')) {
+            sizeChk.find('input').removeAttr('disabled');
+        } 
     })
 
+    sizeChk.on('click', function() {
+        if(!colChk.is(':checked')) {
+            alert("컬러를 선택해 주세요.")
+        }
+    })
+    
     // 상품문의 아코디언
     let answerTit = $('.inquiry .rvList_left')
     answerTit.on('click', function() {
@@ -322,12 +323,23 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     
     // 옵션변경
-    $('.btn_opt_chg').on('click', function() {
-        $(this).siblings('.opt_chg').addClass('on');
-    })
+    // $('.btn_opt_chg').on('click', function() {
+    //     $(this).siblings('.opt_chg').addClass('on');
+    // })
 
-    $('.btn_close').on('click', function() {
-        $(this).parents('.opt_chg').removeClass('on');
+    // $('.btn_close').on('click', function() {
+    //     $(this).parents('.opt_chg').removeClass('on');
+    // })
+
+    // let optChg = document.querySelector(".btn_opt_chg");
+    // optChg.addEventListener("click", function(e) {
+    //     e.target.nextElementSibling.classList.add('on');
+    // })
+
+    let optChg = document.querySelector(".goods_btn_wrap");
+    optChg.firstChild.addEventListener("click", function(e) {
+        e.target.lastChild.classList.add('on');
+        alert("옵션 변경")
     })
 
     var numberSpinner = (function() {
@@ -395,28 +407,28 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // 이미지 프리뷰
-    const inputFile = document.querySelector("#picture_input");
-    const pictureImage = document.querySelector(".picture_image")
+    // const inputFile = document.querySelector("#picture_input");
+    // const pictureImage = document.querySelector(".picture_image")
 
-    inputFile.addEventListener("change", function(e) {
-        const inputTarget = e.target;
-        const file = inputTarget.files[0];
+    // inputFile.addEventListener("change", function(e) {
+    //     const inputTarget = e.target;
+    //     const file = inputTarget.files[0];
 
-        if(file) {
-            const reader = new FileReader();
+    //     if(file) {
+    //         const reader = new FileReader();
             
-            reader.addEventListener("load", function(e) {
-                const readerTarget = e.target;
+    //         reader.addEventListener("load", function(e) {
+    //             const readerTarget = e.target;
 
-                const img = document.createElement("img");
-                img.src = readerTarget.result;
-                img.classList.add("picture_img")
+    //             const img = document.createElement("img");
+    //             img.src = readerTarget.result;
+    //             img.classList.add("picture_img")
 
-                pictureImage.innerHTML = "";
-                pictureImage.appendChild(img);
-            })
+    //             pictureImage.innerHTML = "";
+    //             pictureImage.appendChild(img);
+    //         })
 
-            reader.readAsDataURL(file);
-        } 
-    })
+    //         reader.readAsDataURL(file);
+    //     } 
+    // })
 })

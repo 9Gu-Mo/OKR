@@ -1,0 +1,25 @@
+.wrap {
+    min-width: 1240px;
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+    height: 100%;
+}
+
+.sub_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    width: 88%;
+    position: relative;
+}
+
+.section {
+    width: 100%;
+    height: 100%;
+    padding-top: 150px;
+    &.main_sec {
+        padding-top: 0;
+    }
+}

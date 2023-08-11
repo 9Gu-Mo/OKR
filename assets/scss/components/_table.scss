@@ -1,0 +1,26 @@
+.tbl {
+    width: 100%;
+    &.tbl01 {
+        border-top: 1px solid #000;
+        font-size: 14px;
+        tr {
+            border-bottom: 1px solid #ebebeb;
+            th {
+                background-color: #fafafa;
+                color: #858585;
+                text-align: left;
+                padding: 17px 40px 17px 32px;
+                line-height: 1.5;
+                word-break: keep-all;
+                vertical-align: middle;
+            }
+            td {
+                background-color: #fff;
+                color: #000;
+                text-align: left;
+                padding: 17px 33px;
+                vertical-align: middle;
+            }
+        }
+    }
+}

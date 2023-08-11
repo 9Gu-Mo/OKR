@@ -35,3 +35,32 @@
 @mixin subBg($name, $path: "/images/sub", $format: "jpg") {
     background-image: url("#{$path}#{$name}.#{$format}");
 }
+
+// font-face 축약 mixin
+// @include font-face('font-family', '경로/파일명', font-weight, font-style, 확장자)
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: (
+        eot: "?",
+        svg: "#" + f.str-replace($name, " ", "_")
+    );
+
+    $formats: (
+        otf: "opentype",
+        ttf: "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+        $format: if(map.has-key($extmods, $ext), map.get($formats, $ext), $ext);
+        $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: string.quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
